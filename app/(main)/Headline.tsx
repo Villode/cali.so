@@ -1,9 +1,9 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Balancer from 'react-wrap-balancer'
 import { PeekabooLink } from '~/components/links/PeekabooLink'
 import { SocialLink } from '~/components/links/SocialLink'
-import Balancer from 'react-wrap-balancer'
 
 export function Headline() {
   return (
@@ -19,32 +19,11 @@ export function Headline() {
           duration: 0.3,
         }}
       >
-        {/* 使用內聯樣式實現手寫效果 */}
-        <span
-          className="block"
-          style={{
-            display: 'inline-block',
-            whiteSpace: 'nowrap',
-            overflow: 'hidden',
-            borderRight: '3px solid transparent',
-            width: '0',
-            animation: 'handwrite 2s steps(30) forwards',
-          }}
-        >
+
+        <span className="block handwrite-animation">
           親身經歷后才知我們，
         </span>
-        <span
-          className="block"
-          style={{
-            display: 'inline-block',
-            whiteSpace: 'nowrap',
-            overflow: 'hidden',
-            borderRight: '3px solid transparent',
-            width: '0',
-            animation: 'handwrite 2s steps(30) forwards',
-            animationDelay: '1s',
-          }}
-        >
+        <span className="block handwrite-animation delay-[1s]">
           活在巨大差距裏
         </span>
       </motion.h1>
@@ -61,7 +40,7 @@ export function Headline() {
         }}
       >
         <Balancer>
-          Hi~ 我係Villode，😆哇！竟然有咁有眼光嘅你嚟到我嘅Blog！
+        Hi~ 我係Villode，😆哇！竟然有咁有眼光嘅你嚟到我嘅Blog！
           <PeekabooLink href="https://002777.xyz">[博客]</PeekabooLink>
           飲杯☕咖啡放鬆下啦！而家我正努力喺學習編程嘅路上邁進，致力於持續創造出優秀嘅作品，目前專注於前端同移動端開發。
           我熱愛生活，鍾意討論技術，站喺巨人嘅肩膀上，不斷提升自己。如果你有興趣，我哋可以一齊交流，共同成長！🚀
@@ -111,17 +90,6 @@ export function Headline() {
           platform="mail"
         />
       </motion.div>
-      {/* 內聯樣式中的動畫關鍵幀 */}
-      <style jsx>{`
-        @keyframes handwrite {
-          from {
-            width: 0;
-          }
-          to {
-            width: 100%;
-          }
-        }
-      `}</style>
     </div>
   )
 }
