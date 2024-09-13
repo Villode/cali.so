@@ -27,7 +27,15 @@ function Designer() {
         <span className="absolute -right-[3.5px] -top-[3.5px] size-1.5 border border-lime-700 bg-zinc-50 dark:border-lime-400" />
       </span>
       设计师
-      <img className="group" style="display: inline-block;" src="https://img.villode.us.kg/Villode.svg" alt="Villode" />
+      <img style="display: inline-block;" src="https://img.villode.us.kg/Villode.svg" alt="Villode" />
+    </span>
+  )
+}
+
+function Dsgv() {
+  return (
+    <span className="group ">
+      <img style="display: inline-block;" src="https://img.villode.us.kg/Villode.svg" alt="Villode" />
     </span>
   )
 }
@@ -70,7 +78,7 @@ export function Headline() {
           duration: 0.3,
         }}
       >
-        <Developer />，<Designer />，
+        <Developer />，<Designer />，<Dsgv />，
         <span className="block h-2" />
         <OCD />，<Founder />
       </motion.h1>
