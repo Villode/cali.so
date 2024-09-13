@@ -6,7 +6,7 @@ import Balancer from 'react-wrap-balancer'
 import { PeekabooLink } from '~/components/links/PeekabooLink'
 import { SocialLink } from '~/components/links/SocialLink'
 
-import TypingText from '~/components/TypingText';
+import TypingText from '~/components/TypingText'
 
 export function Headline() {
   return (
