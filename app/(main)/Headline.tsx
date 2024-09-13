@@ -63,7 +63,8 @@ export function Headline() {
           duration: 0.3,
         }}
       >
-        <Developer />，<Designer />，
+        <Developer />，<Designer />
+        <img src="https://img.villode.us.kg/Villode.svg" alt="Villode" className="inline-block ml-4" />
         <span className="block h-2" />
         <OCD />，<Founder />
       </motion.h1>
