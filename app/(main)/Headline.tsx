@@ -6,13 +6,13 @@ import Balancer from 'react-wrap-balancer'
 import { PeekabooLink } from '~/components/links/PeekabooLink'
 import { SocialLink } from '~/components/links/SocialLink'
 
-import TypingText from '~/components/TypingText'
+
 
 export function Headline() {
   return (
     <div className="max-w-2xl">
       <motion.h1
-        className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl"
+        className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl relative"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
@@ -22,8 +22,10 @@ export function Headline() {
           duration: 0.3,
         }}
       >
-        <TypingText text="親身經歷后才知我們，\n活在巨大差距裏" speed={80} />
+        親身經歷后才知我們，
+        <span className="block">活在巨大差距裏</span>
       </motion.h1>
+
       <motion.p
         className="mt-6 text-base text-zinc-600 dark:text-zinc-400"
         initial={{ opacity: 0, y: 20 }}
@@ -37,7 +39,7 @@ export function Headline() {
         }}
       >
         <Balancer>
-        Hi~ 我係Villode，😆哇！竟然有咁有眼光嘅你嚟到我嘅Blog！
+          Hi~ 我係Villode，😆哇！竟然有咁有眼光嘅你嚟到我嘅Blog！
           <PeekabooLink href="https://002777.xyz">[博客]</PeekabooLink>
           飲杯☕咖啡放鬆下啦！而家我正努力喺學習編程嘅路上邁進，致力於持續創造出優秀嘅作品，目前專注於前端同移動端開發。
           我熱愛生活，鍾意討論技術，站喺巨人嘅肩膀上，不斷提升自己。如果你有興趣，我哋可以一齊交流，共同成長！🚀
