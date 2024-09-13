@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion'
 import Balancer from 'react-wrap-balancer'
-
 import { PeekabooLink } from '~/components/links/PeekabooLink'
 import { SocialLink } from '~/components/links/SocialLink'
 
@@ -20,7 +19,34 @@ export function Headline() {
           duration: 0.3,
         }}
       >
-        親身經歷后才知我們，活在巨大差距裏
+
+        <span
+          className="block"
+          style={{
+            display: 'inline-block',
+            whiteSpace: 'nowrap',
+            overflow: 'hidden',
+            borderRight: '3px solid transparent',
+            width: '0',
+            animation: 'handwrite 2s steps(30) forwards',
+          }}
+        >
+          親身經歷后才知我們，
+        </span>
+        <span
+          className="block"
+          style={{
+            display: 'inline-block',
+            whiteSpace: 'nowrap',
+            overflow: 'hidden',
+            borderRight: '3px solid transparent',
+            width: '0',
+            animation: 'handwrite 2s steps(30) forwards',
+            animationDelay: '1s',
+          }}
+        >
+          活在巨大差距裏
+        </span>
       </motion.h1>
       <motion.p
         className="mt-6 text-base text-zinc-600 dark:text-zinc-400"
