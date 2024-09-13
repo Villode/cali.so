@@ -33,14 +33,11 @@ function Designer() {
 
 function Vsvg() {
   return (
-    <span className="group relative bg-black/5 p-1 dark:bg-white/5">
-    <img className="group relative bg-black/5 p-1 dark:bg-white/5" style="display: inline-block;" src="https://img.villode.us.kg/Villode.svg" alt="Villode" />
+    <span className="group">
+    <img  style="display: inline-block;" src="https://img.villode.us.kg/Villode.svg" alt="Villode" />
     </span>
-
   )
 }
-
-
 
 function OCD() {
   return (
