@@ -34,7 +34,7 @@ function Designer() {
 function Vsvg() {
   return (
     <span className="group">
-    <img  style="display: inline-block;" src="https://img.villode.us.kg/Villode.svg" alt="Villode" />
+      <img  style="display: inline-block;" src="https://img.villode.us.kg/Villode.svg" alt="Villode" />
     </span>
   )
 }
