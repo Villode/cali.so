@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Balancer from 'react-wrap-balancer'
+import TypingText from '~/components/TypingText'; // 导入打字效果组件
 import { PeekabooLink } from '~/components/links/PeekabooLink'
 import { SocialLink } from '~/components/links/SocialLink'
 
@@ -19,13 +20,7 @@ export function Headline() {
           duration: 0.3,
         }}
       >
-
-        <span className="block handwrite-animation">
-          親身經歷后才知我們，
-        </span>
-        <span className="block handwrite-animation delay-[1s]">
-          活在巨大差距裏
-        </span>
+        <TypingText text="親身經歷后才知我們，\n活在巨大差距裏" speed={80} />
       </motion.h1>
       <motion.p
         className="mt-6 text-base text-zinc-600 dark:text-zinc-400"
