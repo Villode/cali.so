@@ -14,11 +14,11 @@ import { seo } from '~/lib/seo'
 export const metadata: Metadata = {
   metadataBase: seo.url,
   title: {
-    template: '%s | Cali Castle',
+    template: '%s | Villode Blog',
     default: seo.title,
   },
   description: seo.description,
-  keywords: 'Cali,Cali Castle,郭晓楠,佐玩,创始人,CEO,开发者,设计师,细节控,创新',
+  keywords: 'Villode,Villode Blog,東方,編程,設計,前端,开发者,设计师,博客,创新',
   manifest: '/site.webmanifest',
   robots: {
     index: true,
@@ -34,13 +34,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: {
       default: seo.title,
-      template: '%s | Cali Castle',
+      template: '%s | Villode Blog',
     },
     description: seo.description,
-    siteName: 'Cali Castle',
+    siteName: 'Villode Blog',
     locale: 'zh_CN',
     type: 'website',
-    url: 'https://cali.so',
+    url: 'https://002777.xyz',
   },
   twitter: {
     site: '@thecalicastle',
