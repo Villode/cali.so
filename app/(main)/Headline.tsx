@@ -19,7 +19,6 @@ export function Headline() {
           duration: 0.3,
         }}
       >
-
         <span
           className="block"
           style={{
@@ -111,6 +110,16 @@ export function Headline() {
           platform="mail"
         />
       </motion.div>
+      <style jsx>{`
+        @keyframes handwrite {
+          from {
+            width: 0;
+          }
+          to {
+            width: 100%;
+          }
+        }
+      `}</style>
     </div>
   )
 }
