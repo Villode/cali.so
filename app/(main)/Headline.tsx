@@ -32,20 +32,6 @@ function Designer() {
   )
 }
 
-function Dsgv() {
-  return (
-    <span className="group ">
-      <img style="display: inline-block;" src="https://img.villode.us.kg/Villode.svg" alt="Villode" />
-    </span>
-  )
-}
-
-function Vsvg() {
-  return (
-
-  )
-}
-
 function OCD() {
   return (
     <span className="group inline-flex items-center">
@@ -78,7 +64,7 @@ export function Headline() {
           duration: 0.3,
         }}
       >
-        <Developer />，<Designer />，<Dsgv />，
+        <Developer />，<Designer />，
         <span className="block h-2" />
         <OCD />，<Founder />
       </motion.h1>
