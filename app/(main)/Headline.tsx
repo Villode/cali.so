@@ -2,9 +2,10 @@
 
 import { motion } from 'framer-motion'
 import Balancer from 'react-wrap-balancer'
-import TypingText from '~/components/TypingText'; // 导入打字效果组件
+
 import { PeekabooLink } from '~/components/links/PeekabooLink'
 import { SocialLink } from '~/components/links/SocialLink'
+import TypingText from '~/components/TypingText';
 
 export function Headline() {
   return (
