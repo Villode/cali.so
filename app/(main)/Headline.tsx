@@ -70,7 +70,7 @@ export function Headline() {
           duration: 0.3,
         }}
       >
-        <Developer />，<Designer />，<Vsvg />，
+        <Developer />，<Designer />，
         <span className="block h-2" />
         <OCD />，<Founder />
       </motion.h1>
