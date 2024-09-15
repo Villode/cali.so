@@ -102,7 +102,7 @@ export const getBlogPost = (slug: string) =>
 export const getSettingsQuery = () =>
   groq`
   *[_type == "settings"][0] {
-    "projects": projects[]->{
+    "friends": friends[]->{
       _id,
       name,
       url,
@@ -120,7 +120,7 @@ export const getSettingsQuery = () =>
 }`
 export const getSettings = () =>
   client.fetch<{
-    projects: Project[] | null
+    friends: Project[] | null
     heroPhotos?: string[] | null
     resume?:
       | {
