@@ -1,6 +1,7 @@
 import { type Metadata } from 'next'
 
-
+// 确保导入的名称与组件定义中的名称一致
+import { friends } from '~/app/(main)/friends/friends';
 import { Container } from '~/components/ui/Container'
 
 const title = '友链'
