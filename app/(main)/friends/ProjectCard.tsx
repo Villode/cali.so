@@ -12,10 +12,10 @@ import React from 'react'
 import { ExternalLinkIcon } from '~/assets'
 import { Card } from '~/components/ui/Card'
 import { urlForImage } from '~/sanity/lib/image'
-import { type Project } from '~/sanity/schemas/project'
+import { type friends } from '~/sanity/schemas/friends'
 
-export function ProjectCard({ project }: { project: Project }) {
-  const { _id, url, icon, name, description } = project
+export function friendsCard({ friends }: { friends: friends }) {
+  const { _id, url, icon, name, description } = friends
 
   const mouseX = useMotionValue(0)
   const mouseY = useMotionValue(0)
