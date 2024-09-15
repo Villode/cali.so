@@ -1,4 +1,4 @@
-import { friendsCard } from '~/app/(main)/friends/FriendsCard'
+import { FriendsCard } from '~/app/(main)/friends/friendsCard'
 import { getSettings } from '~/sanity/queries'
 
 export async function friends() {

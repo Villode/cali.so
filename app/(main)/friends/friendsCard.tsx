@@ -14,7 +14,7 @@ import { Card } from '~/components/ui/Card'
 import { urlForImage } from '~/sanity/lib/image'
 import { type friends } from '~/sanity/schemas/friends'
 
-export function friendsCard({ friends }: { friends: friends }) {
+export function FriendsCard({ friends }: { friends: friends }) {
   const { _id, url, icon, name, description } = friends
 
   const mouseX = useMotionValue(0)
