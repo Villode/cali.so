@@ -3,7 +3,7 @@ import { z } from 'zod'
 
 import { Layers3Icon } from '~/assets'
 
-export const Project = z.object({
+export const friends = z.object({
   _id: z.string(),
   name: z.string(),
   url: z.string().url(),
@@ -13,11 +13,11 @@ export const Project = z.object({
     asset: z.any(),
   }),
 })
-export type Project = z.infer<typeof Project>
+export type friends = z.infer<typeof friends>
 
 export default defineType({
-  name: 'project',
-  title: '项目',
+  name: 'friends',
+  title: '友链',
   type: 'document',
   icon: Layers3Icon,
   fields: [

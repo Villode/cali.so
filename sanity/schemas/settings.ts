@@ -13,7 +13,7 @@ export default defineType({
       title: '友链展示列表',
       description: '在 `/friends` 页面展示的友链列表',
       type: 'array',
-      of: [{ type: 'reference', to: { type: 'project' } }],
+      of: [{ type: 'reference', to: { type: 'friends' } }],
     }),
 
     defineField({
