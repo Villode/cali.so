@@ -1,6 +1,6 @@
 import { type Metadata } from 'next'
 
-import { friends } from '~/app/(main)/friends/Friends'
+
 import { Container } from '~/components/ui/Container'
 
 const title = '友链'
