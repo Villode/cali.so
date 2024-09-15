@@ -16,7 +16,7 @@ export const friends = z.object({
 export type friends = z.infer<typeof friends>
 
 export default defineType({
-  name: 'friends',
+  name: 'project',
   title: '友链',
   type: 'document',
   icon: Layers3Icon,
