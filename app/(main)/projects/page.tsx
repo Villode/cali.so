@@ -28,7 +28,7 @@ export default function ProjectsPage() {
           朋友圈
         </h1>
         <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-        <b>每一个独立博客都是一个信息孤岛,通过友链把孤岛连接起来！</b>
+        <b>每一个独立博客都是一个信息孤岛，通过友链把孤岛连接起来！</b>
         想和我交换友链的，没啥特别需求，只是希望你的博客有<b>原创</b>、有<b>意义</b>的内容，并且建站<b>已满半年</b>。那种塞满了转载文章的采集站点还是绕道吧。
         </p>
       </header>
