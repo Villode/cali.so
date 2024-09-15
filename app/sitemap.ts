@@ -14,7 +14,7 @@ export default async function sitemap() {
       lastModified: new Date(),
     },
     {
-      url: url('/friends').href,
+      url: url('/projects').href,
       lastModified: new Date(),
     },
     {

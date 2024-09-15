@@ -3,6 +3,6 @@ export const navigationItems = [
   { href: '/blog', text: '博客' },
   { href: '/guestbook', text: '留言墙' },
   { href: '/ama', text: '说说' },
-  { href: '/friends', text: '友链' },
+  { href: '/projects', text: '友链' },
   { href: '/about', text: '关于' },
 ]

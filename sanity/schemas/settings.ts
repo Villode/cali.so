@@ -9,11 +9,11 @@ export default defineType({
   icon: FilterHorizontalIcon,
   fields: [
     defineField({
-      name: 'friends',
-      title: '友链展示列表',
-      description: '在 `/friends` 页面展示的友链列表',
+      name: 'projects',
+      title: '项目展示列表',
+      description: '在 `/projects` 页面展示的项目列表',
       type: 'array',
-      of: [{ type: 'reference', to: { type: 'friends' } }],
+      of: [{ type: 'reference', to: { type: 'project' } }],
     }),
 
     defineField({
