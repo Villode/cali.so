@@ -61,6 +61,7 @@ export function friendsCard({ friends }: { friends: friends }) {
         <ExternalLinkIcon className="h-4 w-4 flex-none" />
       </p>
 
+
       <AnimatePresence>
         {isHovering && (
           <motion.footer
