@@ -32,10 +32,9 @@ export function BlogPostCard({ post, views }: { post: Post; views: number }) {
         <Img
           src={mainImage.asset.url}
           alt=""
-          className="rounded-t-3xl object-cover"
-          // placeholder="blur"
-          // blurDataURL={mainImage.asset.lqip}
-          // fill
+          className={`rounded-t-3xl object-cover w-full h-full transition-opacity duration-700 ease-in-out ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+          style={isLoaded ? {} : { filter: 'blur(20px)' }} 
+          onLoad={() => setIsLoaded(true)}  
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
         />
       </div>
