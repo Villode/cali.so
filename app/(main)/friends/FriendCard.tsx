@@ -6,7 +6,7 @@ import {
   useMotionValue,
 } from 'framer-motion'
 import { motion } from 'framer-motion'
-// import Image from 'next/image'
+import Image from 'next/image'
 import React from 'react'
 
 import { ExternalLinkIcon } from '~/assets'
@@ -41,12 +41,13 @@ export function FriendCard({ friend }: { friend: Friend }) {
       onMouseLeave={() => setIsHovering(false)}
     >
       <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-        <img
+        <Image
           src={urlForImage(icon)?.size(100, 100).auto('format').url()}
           alt=""
           width={36}
           height={36}
           className="h-9 w-9 rounded-full"
+          unoptimized
         />
       </div>
       <h2 className="mt-6 text-base font-bold text-zinc-800 dark:text-zinc-100">

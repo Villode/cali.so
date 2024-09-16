@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-// import Image from 'next/image'
+import Image from 'next/image'
 import React from 'react'
 
 export function Photos({ photos }: { photos: string[] }) {
@@ -60,13 +60,14 @@ export function Photos({ photos }: { photos: string[] }) {
             }
             layout
           >
-            <img
+            <Image
               src={image}
               alt=""
               width={500}
               height={500}
               sizes="(min-width: 640px) 18rem, 11rem"
               className="pointer-events-none absolute inset-0 h-full w-full select-none object-cover"
+              priority
             />
           </motion.div>
         ))}

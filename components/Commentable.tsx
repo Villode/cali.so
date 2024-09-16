@@ -7,7 +7,7 @@ import { clsxm } from '@zolplay/utils'
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 import { AnimatePresence, motion } from 'framer-motion'
-// import Image from 'next/image'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import React from 'react'
 import { useMutation } from 'react-query'
@@ -213,12 +213,13 @@ function Root({ className, blockId }: CommentableProps) {
             onClick={handleToggleCommenting}
           >
             {top3Users.map((user, idx) => (
-              <img
+              <Image
                 key={idx}
                 src={user.imageUrl ?? ''}
                 alt=""
                 width={20}
                 height={20}
+                unoptimized
                 className="pointer-events-none h-5 w-5 select-none rounded-full ring-2 ring-white dark:ring-zinc-800"
               />
             ))}
@@ -342,12 +343,13 @@ function Comment({
         )}
       >
         <div className="flex w-6 shrink-0 items-end">
-          <img
+          <Image
             src={c.userInfo.imageUrl ?? ''}
             alt=""
             className="h-6 w-6 select-none rounded-full"
             width={24}
             height={24}
+            unoptimized
           />
         </div>
         <div
@@ -527,12 +529,13 @@ function CommentTextarea({ isLoading, onSubmit }: CommentTextareaProps) {
             autoFocus
           />
         )}
-        <img
+        <Image
           src={me?.imageUrl ?? ''}
           alt=""
           className="h-6 w-6 select-none rounded-full"
           width={24}
           height={24}
+          unoptimized
         />
       </div>
       <footer className="flex h-5 w-full items-center justify-between">

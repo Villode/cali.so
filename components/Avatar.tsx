@@ -1,6 +1,6 @@
 import { type ComponentProps } from '@zolplay/react'
 import { clsxm } from '@zolplay/utils'
-// import Image from 'next/image'
+import Image from 'next/image'
 import Link, { type LinkProps } from 'next/link'
 
 import portraitImage from '~/assets/Portrait.png'
@@ -38,7 +38,7 @@ function AvatarImage({
       href={href ?? '/'}
       {...props}
     >
-      <img
+      <Image
         src={alt ? portraitAltImage : portraitImage}
         alt=""
         sizes={large ? '4rem' : '2.25rem'}
@@ -46,6 +46,7 @@ function AvatarImage({
           'rounded-full bg-zinc-100 object-cover dark:bg-zinc-800',
           large ? 'h-16 w-16' : 'h-9 w-9'
         )}
+        priority
       />
     </Link>
   )

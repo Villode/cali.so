@@ -8,7 +8,7 @@ import {
   useMotionTemplate,
   useMotionValue,
 } from 'framer-motion'
-// import Image from 'next/image'
+import Image from 'next/image'
 import React from 'react'
 import { useMutation } from 'react-query'
 import { useReward } from 'react-rewards'
@@ -163,12 +163,13 @@ export function GuestbookInput() {
       </div>
 
       <div className="z-10 h-8 w-8 shrink-0 md:h-10 md:w-10">
-        <img
+        <Image
           src={user.imageUrl}
           alt=""
           width={40}
           height={40}
           className="h-8 w-8 select-none rounded-full md:h-10 md:w-10"
+          unoptimized
         />
       </div>
 

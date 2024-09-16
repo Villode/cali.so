@@ -1,5 +1,5 @@
 import { parseDateTime } from '@zolplay/utils'
-// import Image from 'next/image'
+import Image from 'next/image'
 import Link from 'next/link'
 
 import {
@@ -28,12 +28,13 @@ export function BlogPostCard({ post, views }: { post: Post; views: number }) {
       }
     >
       <div className="relative aspect-[240/135] w-full">
-        <img
+        <Image
           src={mainImage.asset.url}
           alt=""
           className="rounded-t-3xl object-cover"
           placeholder="blur"
           blurDataURL={mainImage.asset.lqip}
+          fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
         />
       </div>

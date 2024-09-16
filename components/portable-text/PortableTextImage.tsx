@@ -4,7 +4,7 @@ import { type PortableTextComponentProps } from '@portabletext/react'
 import * as Dialog from '@radix-ui/react-dialog'
 import { clsxm } from '@zolplay/utils'
 import { AnimatePresence, motion } from 'framer-motion'
-// import Image from 'next/image'
+import Image from 'next/image'
 import React from 'react'
 
 import { ClientOnly } from '~/components/ClientOnly'
@@ -55,7 +55,7 @@ export function PortableTextImage({
             >
               <motion.div className="relative" layoutId={`image_${value._key}`}>
                 <Dialog.Trigger>
-                  <img
+                  <Image
                     src={value.url}
                     width={value.dimensions.width}
                     height={value.dimensions.height}
@@ -67,6 +67,7 @@ export function PortableTextImage({
                     )}
                     alt={value.alt || ''}
                     fetchPriority="high"
+                    unoptimized
                   />
                 </Dialog.Trigger>
               </motion.div>
@@ -106,7 +107,7 @@ export function PortableTextImage({
                           duration: 0.5,
                         }}
                       >
-                        <img
+                        <Image
                           src={value.url}
                           width={value.dimensions.width}
                           height={value.dimensions.height}
@@ -114,6 +115,7 @@ export function PortableTextImage({
                           blurDataURL={value.lqip}
                           className="mx-auto h-full overflow-hidden object-contain"
                           alt={value.alt || ''}
+                          unoptimized
                         />
                       </motion.div>
                     </div>

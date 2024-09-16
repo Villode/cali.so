@@ -1,7 +1,7 @@
 'use client'
 
 import { clsxm } from '@zolplay/utils'
-// import Image from 'next/image'
+import Image from 'next/image'
 import Link, { type LinkProps } from 'next/link'
 import React from 'react'
 
@@ -51,13 +51,14 @@ export const RichLink = React.forwardRef<HTMLAnchorElement, RichLinkProps>(
               hostsThatNeedInvertedFavicons.includes(hrefHost) && 'dark:invert'
             )}
           >
-            <img
+            <Image
               src={faviconUrl}
               alt=""
               aria-hidden="true"
               className="inline h-4 w-4 rounded"
               width={16}
               height={16}
+              unoptimized
               priority={false}
             />
           </span>

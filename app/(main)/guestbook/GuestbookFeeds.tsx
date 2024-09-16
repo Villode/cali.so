@@ -4,7 +4,7 @@ import 'dayjs/locale/zh-cn'
 
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
-// import Image from 'next/image'
+import Image from 'next/image'
 import React from 'react'
 import { useQuery } from 'react-query'
 import { useSnapshot } from 'valtio'
@@ -35,7 +35,7 @@ function Message({
         />
       )}
       <div className="relative flex items-start space-x-3">
-        <img
+        <Image
           src={
             message.userInfo.imageUrl ?? `/avatars/avatar_${(idx % 8) + 1}.png`
           }
@@ -43,6 +43,7 @@ function Message({
           width={40}
           height={40}
           className="h-10 w-10 flex-shrink-0 rounded-full bg-zinc-200 ring-2 ring-zinc-200 dark:bg-zinc-800 dark:ring-zinc-800"
+          unoptimized
         />
         <div className="-mt-1 flex min-w-0 flex-1 items-center gap-3">
           <b className="text-sm font-bold dark:text-zinc-100">

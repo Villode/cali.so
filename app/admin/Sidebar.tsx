@@ -1,7 +1,7 @@
 'use client'
 
 import { clsxm } from '@zolplay/utils'
-// import Image from 'next/image'
+import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
@@ -33,7 +33,7 @@ export function Sidebar() {
       {/* Sidebar component, swap this element with another sidebar if you like */}
       <div className="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-6 dark:border-slate-800 dark:bg-slate-900">
         <div className="flex h-16 shrink-0 items-center">
-          <img className="h-8 w-auto" src={logo} alt="" />
+          <Image className="h-8 w-auto" src={logo} alt="" />
         </div>
         <nav className="flex flex-1 flex-col">
           <ul role="list" className="flex flex-1 flex-col gap-y-7">
