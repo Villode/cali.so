@@ -1,5 +1,5 @@
 import { parseDateTime } from '@zolplay/utils'
-import Image from 'next/image'
+// import Image from 'next/image'
 import Link from 'next/link'
 
 import {
@@ -8,6 +8,7 @@ import {
   HourglassIcon,
   ScriptIcon,
 } from '~/assets'
+import { Img } from '~/emails/_components'
 import { prettifyNumber } from '~/lib/math'
 import { type Post } from '~/sanity/schemas/post'
 
@@ -28,13 +29,13 @@ export function BlogPostCard({ post, views }: { post: Post; views: number }) {
       }
     >
       <div className="relative aspect-[240/135] w-full">
-        <Image
+        <Img
           src={mainImage.asset.url}
           alt=""
           className="rounded-t-3xl object-cover"
-          placeholder="blur"
+          // placeholder="blur"
           blurDataURL={mainImage.asset.lqip}
-          fill
+          // fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
         />
       </div>
