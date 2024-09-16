@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Balancer from 'react-wrap-balancer'
 import { Container } from '~/components/ui/Container'
 
-// import PlaceholderImage from './placeholder-image.jpg'
+import PlaceholderImage from './Arc ynleUdHy@2x.png'
 
 const title = '假文章标题'
 const description =
