@@ -12,7 +12,7 @@
  */
 !process.env.SKIP_ENV_VALIDATION && (await import('./env.mjs'))
 
-@type {import('next').NextConfig} 
+/**@type {import('next').NextConfig} */
 const nextConfig = {
   // images: {
   //   remotePatterns: [
