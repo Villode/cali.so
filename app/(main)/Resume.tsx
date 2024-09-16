@@ -1,7 +1,8 @@
-import Image from 'next/image'
+// import Image from 'next/image'
 import React from 'react'
 
 import { BriefcaseIcon } from '~/assets'
+import { Img } from '~/emails/_components'
 
 type Resume = {
   company: string
@@ -22,13 +23,13 @@ export function Resume({ resume }: { resume: Resume[] }) {
         {resume.map((role, roleIndex) => (
           <li key={roleIndex} className="flex gap-4">
             <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-              <Image
+              <Img
                 src={role.logo}
                 alt={role.company}
                 className="h-8 w-8 rounded-full"
                 width={100}
                 height={100}
-                unoptimized
+                // unoptimized
               />
             </div>
             <dl className="flex flex-auto flex-wrap gap-x-2">
