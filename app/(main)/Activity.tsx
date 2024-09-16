@@ -1,7 +1,7 @@
 'use client'
 
 import { AnimatePresence, motion } from 'framer-motion'
-import Image from 'next/image'
+// import Image from 'next/image'
 import React from 'react'
 import { useQuery } from 'react-query'
 

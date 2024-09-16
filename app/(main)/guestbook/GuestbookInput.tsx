@@ -8,7 +8,7 @@ import {
   useMotionTemplate,
   useMotionValue,
 } from 'framer-motion'
-import Image from 'next/image'
+// import Image from 'next/image'
 import React from 'react'
 import { useMutation } from 'react-query'
 import { useReward } from 'react-rewards'

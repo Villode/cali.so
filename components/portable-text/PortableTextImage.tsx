@@ -4,7 +4,7 @@ import { type PortableTextComponentProps } from '@portabletext/react'
 import * as Dialog from '@radix-ui/react-dialog'
 import { clsxm } from '@zolplay/utils'
 import { AnimatePresence, motion } from 'framer-motion'
-import Image from 'next/image'
+// import Image from 'next/image'
 import React from 'react'
 
 import { ClientOnly } from '~/components/ClientOnly'

@@ -4,7 +4,7 @@ import 'dayjs/locale/zh-cn'
 
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
-import Image from 'next/image'
+// import Image from 'next/image'
 import React from 'react'
 import { useQuery } from 'react-query'
 import { useSnapshot } from 'valtio'

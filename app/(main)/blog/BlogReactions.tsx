@@ -7,7 +7,7 @@ import {
   useSpring,
   useTransform,
 } from 'framer-motion'
-import Image from 'next/image'
+// import Image from 'next/image'
 import React from 'react'
 
 import { prettifyNumber } from '~/lib/math'

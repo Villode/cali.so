@@ -2,7 +2,7 @@
 
 import { parseDateTime } from '@zolplay/utils'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
+// import Image from 'next/image'
 import React from 'react'
 import Balancer from 'react-wrap-balancer'
 

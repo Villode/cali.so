@@ -1,5 +1,5 @@
 import { clsxm } from '@zolplay/utils'
-import Image, { type ImageProps } from 'next/image'
+// import Image, { type ImageProps } from 'next/image'
 
 type BleedThroughImageProps = ImageProps & {
   dimensions: {
