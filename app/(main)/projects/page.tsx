@@ -1,6 +1,6 @@
 import { type Metadata } from 'next'
 
-import { Projects } from '~/app/(main)/projects/Projects'
+import { Friends } from '~/app/(main)/friends/friends'
 import { Container } from '~/components/ui/Container'
 
 const title = '友链'
@@ -20,7 +20,7 @@ export const metadata = {
   },
 } satisfies Metadata
 
-export default function ProjectsPage() {
+export default function FriendsPage() {
   return (
     <Container className="mt-16 sm:mt-32">
       <header className="max-w-2xl">
@@ -33,7 +33,7 @@ export default function ProjectsPage() {
         </p>
       </header>
       <div className="mt-16 sm:mt-20">
-        <Projects />
+        <Friends />
       </div>
     </Container>
   )
