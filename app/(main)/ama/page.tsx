@@ -1,3 +1,5 @@
+"use client"; // 添加这一行，使组件成为客户端组件
+
 import { useState } from 'react'
 import Balancer from 'react-wrap-balancer'
 import { Container } from '~/components/ui/Container'
