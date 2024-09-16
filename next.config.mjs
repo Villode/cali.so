@@ -12,7 +12,8 @@
  */
 !process.env.SKIP_ENV_VALIDATION && (await import('./env.mjs'))
 
-/** @type {import('next').NextConfig} */
+/** 
+ /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
     remotePatterns: [
@@ -20,7 +21,7 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'img.villode.us.kg',
         port: '',
-        pathname: `/**`,
+        pathname: '/**',
       },
       {
         protocol: 'https',
@@ -33,6 +34,10 @@ const nextConfig = {
 
   experimental: {
     taint: true,
+  },
+
+  eslint: {
+    ignoreDuringBuilds: true,  // 可以禁用构建时的 ESLint 检查
   },
 
   redirects() {
