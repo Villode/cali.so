@@ -51,7 +51,7 @@ export const RichLink = React.forwardRef<HTMLAnchorElement, RichLinkProps>(
               hostsThatNeedInvertedFavicons.includes(hrefHost) && 'dark:invert'
             )}
           >
-            <Image
+            <img
               src={faviconUrl}
               alt=""
               aria-hidden="true"

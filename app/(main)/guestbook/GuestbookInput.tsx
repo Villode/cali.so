@@ -163,7 +163,7 @@ export function GuestbookInput() {
       </div>
 
       <div className="z-10 h-8 w-8 shrink-0 md:h-10 md:w-10">
-        <Image
+        <img
           src={user.imageUrl}
           alt=""
           width={40}

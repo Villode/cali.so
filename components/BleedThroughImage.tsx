@@ -27,7 +27,7 @@ export function BleedThroughImage({
           alt=""
         />
       </div>
-      <Image
+      <img
         width={dimensions.width}
         height={dimensions.height}
         unoptimized

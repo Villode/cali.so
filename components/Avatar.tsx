@@ -38,7 +38,7 @@ function AvatarImage({
       href={href ?? '/'}
       {...props}
     >
-      <Image
+      <img
         src={alt ? portraitAltImage : portraitImage}
         alt=""
         sizes={large ? '4rem' : '2.25rem'}

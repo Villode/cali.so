@@ -213,7 +213,7 @@ function Root({ className, blockId }: CommentableProps) {
             onClick={handleToggleCommenting}
           >
             {top3Users.map((user, idx) => (
-              <Image
+              <img
                 key={idx}
                 src={user.imageUrl ?? ''}
                 alt=""
@@ -343,7 +343,7 @@ function Comment({
         )}
       >
         <div className="flex w-6 shrink-0 items-end">
-          <Image
+          <img
             src={c.userInfo.imageUrl ?? ''}
             alt=""
             className="h-6 w-6 select-none rounded-full"
@@ -529,7 +529,7 @@ function CommentTextarea({ isLoading, onSubmit }: CommentTextareaProps) {
             autoFocus
           />
         )}
-        <Image
+        <img
           src={me?.imageUrl ?? ''}
           alt=""
           className="h-6 w-6 select-none rounded-full"

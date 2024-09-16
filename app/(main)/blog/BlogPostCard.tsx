@@ -28,7 +28,7 @@ export function BlogPostCard({ post, views }: { post: Post; views: number }) {
       }
     >
       <div className="relative aspect-[240/135] w-full">
-        <Image
+        <img
           src={mainImage.asset.url}
           alt=""
           className="rounded-t-3xl object-cover"

@@ -60,7 +60,7 @@ export function Photos({ photos }: { photos: string[] }) {
             }
             layout
           >
-            <Image
+            <img
               src={image}
               alt=""
               width={500}

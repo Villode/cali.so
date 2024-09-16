@@ -95,7 +95,7 @@ export function PeekabooLink({
                   duration: 0.2,
                 }}
               >
-                <Image
+                <img
                   src={`/api/link-preview?url=${href}`}
                   alt={`${href} 的预览图`}
                   className="pointer-events-none absolute left-0 top-0 h-full w-full rounded-xl object-cover"

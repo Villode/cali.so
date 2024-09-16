@@ -55,7 +55,7 @@ export function PortableTextImage({
             >
               <motion.div className="relative" layoutId={`image_${value._key}`}>
                 <Dialog.Trigger>
-                  <Image
+                  <img
                     src={value.url}
                     width={value.dimensions.width}
                     height={value.dimensions.height}
@@ -107,7 +107,7 @@ export function PortableTextImage({
                           duration: 0.5,
                         }}
                       >
-                        <Image
+                        <img
                           src={value.url}
                           width={value.dimensions.width}
                           height={value.dimensions.height}

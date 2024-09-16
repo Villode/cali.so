@@ -130,7 +130,7 @@ function ReactIcon({
       }}
       onClick={onClick}
     >
-      <Image
+      <img
         src={image}
         alt=""
         className="inline-block"
