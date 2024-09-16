@@ -1,3 +1,6 @@
+// 添加 "use client" 指令，标记为客户端组件
+"use client";
+
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Balancer from 'react-wrap-balancer';
