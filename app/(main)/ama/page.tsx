@@ -1,6 +1,4 @@
-// import Image from 'next/image'
 import Balancer from 'react-wrap-balancer'
-
 import { Container } from '~/components/ui/Container'
 
 const posts = [
@@ -45,7 +43,12 @@ export default function PostPage() {
             </div>
             <p className="mb-4 text-base text-zinc-700 dark:text-zinc-300">{post.content}</p>
             {post.image && (
-              <Image src={post.image} alt="" className="w-full h-auto rounded-lg" />
+              <img
+                src={post.image}
+                alt="Post Image"
+                className="w-full h-auto rounded-lg"
+                style={{ objectFit: 'cover' }}
+              />
             )}
           </div>
         ))}
