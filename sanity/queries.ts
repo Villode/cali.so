@@ -120,7 +120,7 @@ export const getSettingsQuery = () =>
 }`
 export const getSettings = () =>
   client.fetch<{
-    friends: friend[] | null
+    friends: Friend[] | null
     heroPhotos?: string[] | null
     resume?:
       | {
