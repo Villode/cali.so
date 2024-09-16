@@ -1,26 +1,21 @@
-// 添加 "use client" 指令，标记为客户端组件
-"use client";
-
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Balancer from 'react-wrap-balancer';
 import { Container } from '~/components/ui/Container';
 
-// 定义获取数据的链接
-const DATA_URL = 'https://002777.xyz/ssdata.json';
+const DATA_URL = 'https://json-ple.pages.dev/ssdata.json';
 
 export default function AskMeAnythingPage() {
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState<Post[]>([]);
 
   useEffect(() => {
-    // 获取数据的函数
     async function fetchPosts() {
       try {
         const response = await fetch(DATA_URL);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
-        const data = await response.json();
+        const data: Post[] = await response.json();
         setPosts(data);
       } catch (error) {
         console.error('There was a problem with the fetch operation:', error);
