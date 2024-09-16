@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Balancer from 'react-wrap-balancer';
 import { Container } from '~/components/ui/Container';
 
+// 定义获取数据的链接
 const DATA_URL = 'https://json-ple.pages.dev/ssdata.json';
 
 interface Post {
@@ -18,6 +19,7 @@ export default function AskMeAnythingPage() {
   const [posts, setPosts] = useState<Post[]>([]);
 
   useEffect(() => {
+    // 获取数据的函数
     async function fetchPosts() {
       try {
         const response = await fetch(DATA_URL);
@@ -31,7 +33,7 @@ export default function AskMeAnythingPage() {
       }
     }
 
-    fetchPosts();
+    fetchPosts().catch(console.error); // 处理未处理的 Promise 错误
   }, []);
 
   return (
