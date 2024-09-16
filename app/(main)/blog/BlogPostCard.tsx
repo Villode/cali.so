@@ -1,9 +1,9 @@
-"use client"; // 添加此行将组件标记为客户端组件
+"use client"; // 标记为客户端组件
 
 import { parseDateTime } from '@zolplay/utils'
 // import Image from 'next/image'
 import Link from 'next/link'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import {
   CalendarIcon,
@@ -18,8 +18,13 @@ import { type Post } from '~/sanity/schemas/post'
 export function BlogPostCard({ post, views }: { post: Post; views: number }) {
   const { title, slug, mainImage, publishedAt, categories, readingTime } = post
 
-  // 声明 isLoaded 的状态来处理图片加载的透明度
+  // 声明 isLoaded 的状态
   const [isLoaded, setIsLoaded] = useState(false);
+
+  // 调试用：检查图片加载是否触发 onLoad
+  useEffect(() => {
+    console.log("Image loaded:", isLoaded);
+  }, [isLoaded]);
 
   return (
     <Link
@@ -39,8 +44,11 @@ export function BlogPostCard({ post, views }: { post: Post; views: number }) {
           src={mainImage.asset.url}
           alt={title}
           className="rounded-t-3xl object-cover w-full h-full transition-opacity duration-500"
-          onLoad={() => setIsLoaded(true)}
-          style={{ opacity: isLoaded ? 1 : 0 }}
+          onLoad={() => {
+            console.log("Image has loaded");
+            setIsLoaded(true);  // 设置图片加载状态为 true
+          }}
+          style={{ opacity: isLoaded ? 1 : 0 }} // 根据 isLoaded 状态动态设置透明度
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
         />
       </div>
