@@ -12,25 +12,24 @@
  */
 !process.env.SKIP_ENV_VALIDATION && (await import('./env.mjs'))
 
-/** 
- /** @type {import('next').NextConfig} */
+/**@type {import('next').NextConfig} */
 const nextConfig = {
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'img.villode.us.kg',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'img02.anheyu.com',
-        port: '',
-        pathname: '/**',
-      },
-    ],
-  },
+  // images: {
+  //   remotePatterns: [
+  //     {
+  //       protocol: 'https',
+  //       hostname: 'img.villode.us.kg',
+  //       port: '',
+  //       pathname: '/**',
+  //     },
+  //     {
+  //       protocol: 'https',
+  //       hostname: 'img02.anheyu.com',
+  //       port: '',
+  //       pathname: '/**',
+  //     },
+  //   ],
+  // },
 
   experimental: {
     taint: true,
