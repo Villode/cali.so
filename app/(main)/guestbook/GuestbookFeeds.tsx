@@ -43,7 +43,6 @@ function Message({
           width={40}
           height={40}
           className="h-10 w-10 flex-shrink-0 rounded-full bg-zinc-200 ring-2 ring-zinc-200 dark:bg-zinc-800 dark:ring-zinc-800"
-          unoptimized
         />
         <div className="-mt-1 flex min-w-0 flex-1 items-center gap-3">
           <b className="text-sm font-bold dark:text-zinc-100">

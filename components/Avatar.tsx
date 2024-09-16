@@ -46,7 +46,6 @@ function AvatarImage({
           'rounded-full bg-zinc-100 object-cover dark:bg-zinc-800',
           large ? 'h-16 w-16' : 'h-9 w-9'
         )}
-        priority
       />
     </Link>
   )
