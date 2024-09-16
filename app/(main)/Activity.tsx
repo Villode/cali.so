@@ -1,10 +1,8 @@
 'use client'
 
 import { AnimatePresence, motion } from 'framer-motion'
-// import Image from 'next/image'
 import React from 'react'
 import { useQuery } from 'react-query'
-
 import { Tooltip } from '~/components/ui/Tooltip'
 
 const appLabels: { [app: string]: string } = {
@@ -29,6 +27,7 @@ const appLabels: { [app: string]: string } = {
   screenflow: 'ScreenFlow',
   resolve: 'DaVinci Resolve',
 }
+
 export function Activity() {
   const { data } = useQuery<{ app: string }>(
     'activity',
@@ -62,14 +61,11 @@ export function Activity() {
                 repeat: Infinity,
               }}
             />
-            <Image
+            <img
               width={32}
               height={32}
               src={`/apps/${app}.png`}
               alt={app}
-              priority
-              fetchPriority="high"
-              unoptimized
               className="pointer-events-none select-none"
             />
           </div>
