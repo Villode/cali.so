@@ -1,9 +1,18 @@
+"use client";
+
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Balancer from 'react-wrap-balancer';
 import { Container } from '~/components/ui/Container';
 
 const DATA_URL = 'https://json-ple.pages.dev/ssdata.json';
+
+interface Post {
+  date: string;
+  tags?: string[];
+  image?: string;
+  content: string;
+}
 
 export default function AskMeAnythingPage() {
   const [posts, setPosts] = useState<Post[]>([]);
