@@ -43,12 +43,13 @@ export default function PostPage() {
             </div>
             <p className="mb-4 text-base text-zinc-700 dark:text-zinc-300">{post.content}</p>
             {post.image && (
-              <img
-                src={post.image}
-                alt="Post Image"
-                className="w-full h-auto rounded-lg"
-                style={{ objectFit: 'cover' }}
-              />
+              <a href={post.image} target="_blank" rel="noopener noreferrer">
+                <img
+                  src={post.image}
+                  alt="Post Image"
+                  className="w-full h-48 object-cover rounded-lg"
+                />
+              </a>
             )}
           </div>
         ))}
