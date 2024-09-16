@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Balancer from 'react-wrap-balancer'
 import { Container } from '~/components/ui/Container'
 
@@ -23,6 +24,16 @@ const posts = [
 ]
 
 export default function PostPage() {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null)
+
+  const handleImageClick = (image: string) => {
+    setSelectedImage(image)
+  }
+
+  const handleClose = () => {
+    setSelectedImage(null)
+  }
+
   return (
     <Container className="mt-16 sm:mt-24">
       <header className="max-w-2xl">
@@ -34,26 +45,46 @@ export default function PostPage() {
         </p>
       </header>
 
-      <div className="space-y-8">
+      <div className="flex flex-wrap gap-4">
         {posts.map((post, index) => (
-          <div key={index} className="p-6 bg-white dark:bg-zinc-800 shadow-lg rounded-lg">
+          <div key={index} className="w-80 p-4 bg-white dark:bg-zinc-800 shadow-lg rounded-lg">
             <div className="flex items-center mb-4">
               <span className="text-sm font-medium text-zinc-500 dark:text-zinc-400">{post.date}</span>
               <span className="ml-4 px-2 py-1 text-xs font-semibold text-white bg-blue-500 rounded-full">{post.label}</span>
             </div>
             <p className="mb-4 text-base text-zinc-700 dark:text-zinc-300">{post.content}</p>
             {post.image && (
-              <a href={post.image} target="_blank" rel="noopener noreferrer">
-                <img
-                  src={post.image}
-                  alt="Post Image"
-                  className="w-full h-48 object-cover rounded-lg"
-                />
-              </a>
+              <img
+                src={post.image}
+                alt="Post Image"
+                className="w-full h-auto rounded-lg cursor-pointer"
+                style={{ objectFit: 'cover' }}
+                onClick={() => handleImageClick(post.image)}
+              />
             )}
           </div>
         ))}
       </div>
+
+      {/* Modal for displaying large image */}
+      {selectedImage && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 z-50" onClick={handleClose}>
+          <div className="relative bg-white p-4 rounded-lg">
+            <button
+              className="absolute top-2 right-2 text-white bg-black rounded-full p-2"
+              onClick={handleClose}
+            >
+              ✕
+            </button>
+            <img
+              src={selectedImage}
+              alt="Large View"
+              className="max-w-full max-h-screen rounded-lg"
+              style={{ objectFit: 'contain' }}
+            />
+          </div>
+        </div>
+      )}
     </Container>
   )
 }
