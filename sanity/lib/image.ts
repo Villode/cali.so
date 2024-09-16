@@ -1,10 +1,10 @@
 import createImageUrlBuilder from '@sanity/image-url'
 import type { Image } from 'sanity'
 
-import { dataset, friendId } from '~/sanity/env'
+import { dataset, projectId } from '~/sanity/env'
 
 const imageBuilder = createImageUrlBuilder({
-  friendId: friendId || '',
+  projectId: projectId || '',
   dataset: dataset || '',
 })
 

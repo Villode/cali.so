@@ -11,13 +11,13 @@ import { media } from 'sanity-plugin-media'
 import { settingsPlugin, settingsStructure } from '~/sanity/plugins/settings'
 
 // Go to https://www.sanity.io/docs/api-versioning to learn how API versioning works
-import { apiVersion, dataset, friendId } from './sanity/env'
+import { apiVersion, dataset, projectId } from './sanity/env'
 import { schema } from './sanity/schema'
 import settingsType from './sanity/schemas/settings'
 
 export default defineConfig({
   basePath: '/studio',
-  friendId,
+  projectId,
   dataset,
   // Add and edit the content schema in the './sanity/schema' folder
   schema,
