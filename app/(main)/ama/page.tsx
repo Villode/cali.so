@@ -1,75 +1,54 @@
-"use client";
+import Image from 'next/image'
+import Balancer from 'react-wrap-balancer'
+import { Container } from '~/components/ui/Container'
 
-import { useEffect, useState } from 'react';
-import Image from 'next/image';
-import Balancer from 'react-wrap-balancer';
-import { Container } from '~/components/ui/Container';
+import PlaceholderImage from './placeholder-image.jpg'
 
-// 定义获取数据的链接
-const DATA_URL = 'https://json-ple.pages.dev/ssdata.json';
+const title = '假文章标题'
+const description =
+  '这是一个假文章描述，用于展示如何将页面转换成推特文章卡片格式。'
 
-interface Post {
-  date: string;
-  tags?: string[];
-  image?: string;
-  content: string;
+export const metadata = {
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+  },
+  twitter: {
+    title,
+    description,
+    card: 'summary_large_image',
+  },
 }
 
-export default function AskMeAnythingPage() {
-  const [posts, setPosts] = useState<Post[]>([]);
-
-  useEffect(() => {
-    // 获取数据的函数
-    async function fetchPosts() {
-      try {
-        const response = await fetch(DATA_URL);
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        const data: Post[] = await response.json();
-        setPosts(data);
-      } catch (error) {
-        console.error('There was a problem with the fetch operation:', error);
-      }
-    }
-
-    fetchPosts().catch(console.error); // 处理未处理的 Promise 错误
-  }, []);
-
+export default function TwitterCardPage() {
   return (
     <Container className="mt-16 sm:mt-24">
-      <header className="max-w-2xl">
-        <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-          即刻短文
-        </h1>
-      </header>
+      <article className="bg-white shadow-md rounded-lg overflow-hidden max-w-xl mx-auto">
+        <header className="p-4 border-b border-gray-200">
+          <h1 className="text-2xl font-semibold text-gray-800">
+            {title}
+          </h1>
+          <p className="text-sm text-gray-600 mt-2">
+            <Balancer>{description}</Balancer>
+          </p>
+        </header>
 
-      <section className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {posts.map((post, index) => (
-          <div key={index} className="relative bg-white dark:bg-zinc-800 p-6 rounded-lg shadow-md">
-            <div className="absolute top-4 left-4 text-sm text-zinc-500 dark:text-zinc-400">
-              <time>{post.date}</time>
-              <div className="mt-2">
-                {post.tags && post.tags.map((tag, i) => (
-                  <span key={i} className="inline-block bg-blue-200 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-blue-800 dark:text-blue-300">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-            <div className="pt-12">
-              {post.image && (
-                <div className="mb-4">
-                  <Image src={post.image} alt="" className="w-full h-auto rounded-lg" />
-                </div>
-              )}
-              <p className="text-base text-zinc-800 dark:text-zinc-100">
-                <Balancer>{post.content}</Balancer>
-              </p>
-            </div>
-          </div>
-        ))}
-      </section>
+        <div className="p-4">
+          <Image
+            src={PlaceholderImage}
+            alt="Placeholder"
+            className="w-full h-auto object-cover rounded-lg"
+          />
+        </div>
+
+        <footer className="p-4 border-t border-gray-200">
+          <p className="text-sm text-gray-600">
+            @username • 2h
+          </p>
+        </footer>
+      </article>
     </Container>
-  );
+  )
 }
