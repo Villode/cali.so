@@ -1,7 +1,7 @@
 "use client"
 
-import React from 'react'
-import Script from 'next/script'  // 导入 Script 组件
+import React, { useEffect } from 'react'
+// import Script from 'next/script'
 
 import { BlogPosts } from '~/app/(main)/blog/BlogPosts'
 import { Headline } from '~/app/(main)/Headline'
@@ -14,6 +14,19 @@ import { getSettings } from '~/sanity/queries'
 
 export default async function BlogHomePage() {
   const settings = await getSettings()
+
+  useEffect(() => {
+    // 确保此代码只在客户端执行
+    const script = document.createElement('script')
+    script.src = 'https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js'
+    script.async = true
+    document.body.appendChild(script)
+    
+    return () => {
+      // 清理操作
+      document.body.removeChild(script)
+    }
+  }, [])
 
   return (
     <>
@@ -35,8 +48,7 @@ export default async function BlogHomePage() {
           <aside className="space-y-10 lg:sticky lg:top-8 lg:h-fit lg:pl-16 xl:pl-20">
             <Newsletter />
             {settings?.resume && <Resume resume={settings.resume} />}
-            {/* 直接插入加载 Live2D 看板娘的 script */}
-            <Script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js" strategy="afterInteractive" />
+            
           </aside>
         </div>
       </Container>
