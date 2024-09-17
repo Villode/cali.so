@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { BlogPosts } from '~/app/(main)/blog/BlogPosts'
 import { Headline } from '~/app/(main)/Headline'
@@ -12,9 +12,24 @@ import { Container } from '~/components/ui/Container'
 import { getSettings } from '~/sanity/queries'
 
 export default function BlogHomePage() {
-  const settings = getSettings()
+  const [settings, setSettings] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
 
   useEffect(() => {
+    const fetchSettings = async () => {
+      try {
+        const data = await getSettings()
+        setSettings(data)
+      } catch (err) {
+        setError(err)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchSettings()
+
     const script = document.createElement('script')
     script.src = 'https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js'
     script.async = true
@@ -24,6 +39,9 @@ export default function BlogHomePage() {
       document.body.removeChild(script)
     }
   }, [])
+
+  if (loading) return <p>Loading...</p>
+  if (error) return <p>Error loading settings</p>
 
   return (
     <>
