@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useEffect } from 'react'
 
 import { BlogPosts } from '~/app/(main)/blog/BlogPosts'
@@ -9,17 +11,15 @@ import { PencilSwooshIcon } from '~/assets'
 import { Container } from '~/components/ui/Container'
 import { getSettings } from '~/sanity/queries'
 
-export default async function BlogHomePage() {
-  const settings = await getSettings()
+export default function BlogHomePage() {
+  const settings = getSettings()
 
   useEffect(() => {
-    // Create a script element
     const script = document.createElement('script')
     script.src = 'https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js'
     script.async = true
     document.body.appendChild(script)
     
-    // Clean up the script when the component unmounts
     return () => {
       document.body.removeChild(script)
     }
