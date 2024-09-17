@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import Live2DScript from '~/components/Live2DScript'; // 确保路径正确
 
 import { BlogPosts } from '~/app/(main)/blog/BlogPosts'
 import { Headline } from '~/app/(main)/Headline'
@@ -10,10 +11,12 @@ import { Container } from '~/components/ui/Container'
 import { getSettings } from '~/sanity/queries'
 
 export default async function BlogHomePage() {
-  const settings = await getSettings()
+  const settings = await getSettings();
 
   return (
     <>
+      <Live2DScript /> {/* 添加 Live2D 脚本组件 */}
+
       <Container className="mt-10">
         <Headline />
       </Container>
@@ -39,4 +42,4 @@ export default async function BlogHomePage() {
   )
 }
 
-export const revalidate = 60
+export const revalidate = 60;
