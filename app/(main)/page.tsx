@@ -8,6 +8,7 @@ import { Resume } from '~/app/(main)/Resume'
 import { PencilSwooshIcon } from '~/assets'
 import { Container } from '~/components/ui/Container'
 import { getSettings } from '~/sanity/queries'
+import { Live2D } from '~/app/(main)/Live2d'  // 引入Live2D组件
 
 export default async function BlogHomePage() {
   const settings = await getSettings()
@@ -32,6 +33,7 @@ export default async function BlogHomePage() {
           <aside className="space-y-10 lg:sticky lg:top-8 lg:h-fit lg:pl-16 xl:pl-20">
             <Newsletter />
             {settings?.resume && <Resume resume={settings.resume} />}
+            <Live2D />  {/* Live2D 看板娘组件 */}
           </aside>
         </div>
       </Container>
