@@ -1,3 +1,5 @@
+"use client"; // 确保这一行在文件的顶部
+
 import { useEffect } from 'react';
 
 const Live2DScript = () => {
