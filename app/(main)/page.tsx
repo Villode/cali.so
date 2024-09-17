@@ -1,5 +1,5 @@
 import React from 'react';
-import Live2DScript from '~/components/Live2DScript'; // 确保路径正确
+import Live2DScript from '~/app/(main)/Live2DScript'; // 确保路径正确
 
 import { BlogPosts } from '~/app/(main)/blog/BlogPosts'
 import { Headline } from '~/app/(main)/Headline'
