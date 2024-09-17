@@ -1,3 +1,5 @@
+"use client"  // 必须加在文件顶部
+
 import React, { useEffect, useRef } from 'react'
 import { Live2DModel } from 'pixi-live2d-display'
 
