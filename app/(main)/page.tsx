@@ -1,6 +1,4 @@
-"use client"
-
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 
 import { BlogPosts } from '~/app/(main)/blog/BlogPosts'
 import { Headline } from '~/app/(main)/Headline'
@@ -11,37 +9,8 @@ import { PencilSwooshIcon } from '~/assets'
 import { Container } from '~/components/ui/Container'
 import { getSettings } from '~/sanity/queries'
 
-export default function BlogHomePage() {
-  const [settings, setSettings] = useState(null)
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
-
-  useEffect(() => {
-    const fetchSettings = async () => {
-      try {
-        const data = await getSettings()
-        setSettings(data)
-      } catch (err) {
-        setError(err)
-      } finally {
-        setLoading(false)
-      }
-    }
-
-    fetchSettings()
-
-    const script = document.createElement('script')
-    script.src = 'https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js'
-    script.async = true
-    document.body.appendChild(script)
-    
-    return () => {
-      document.body.removeChild(script)
-    }
-  }, [])
-
-  if (loading) return <p>Loading...</p>
-  if (error) return <p>Error loading settings</p>
+export default async function BlogHomePage() {
+  const settings = await getSettings()
 
   return (
     <>
