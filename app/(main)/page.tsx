@@ -1,7 +1,4 @@
-"use client"
-
 import React, { useEffect } from 'react'
-// import Script from 'next/script'
 
 import { BlogPosts } from '~/app/(main)/blog/BlogPosts'
 import { Headline } from '~/app/(main)/Headline'
@@ -16,14 +13,14 @@ export default async function BlogHomePage() {
   const settings = await getSettings()
 
   useEffect(() => {
-    // 确保此代码只在客户端执行
+    // Create a script element
     const script = document.createElement('script')
     script.src = 'https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js'
     script.async = true
     document.body.appendChild(script)
     
+    // Clean up the script when the component unmounts
     return () => {
-      // 清理操作
       document.body.removeChild(script)
     }
   }, [])
@@ -48,7 +45,6 @@ export default async function BlogHomePage() {
           <aside className="space-y-10 lg:sticky lg:top-8 lg:h-fit lg:pl-16 xl:pl-20">
             <Newsletter />
             {settings?.resume && <Resume resume={settings.resume} />}
-            
           </aside>
         </div>
       </Container>
