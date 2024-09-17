@@ -1,6 +1,8 @@
-"use client"  // 这里同样需要加上
+"use client"
 
 import React from 'react'
+import Script from 'next/script'  // 导入 Script 组件
+
 import { BlogPosts } from '~/app/(main)/blog/BlogPosts'
 import { Headline } from '~/app/(main)/Headline'
 import { Newsletter } from '~/app/(main)/Newsletter'
@@ -9,7 +11,6 @@ import { Resume } from '~/app/(main)/Resume'
 import { PencilSwooshIcon } from '~/assets'
 import { Container } from '~/components/ui/Container'
 import { getSettings } from '~/sanity/queries'
-import { Live2D } from '~/app/(main)/Live2d'
 
 export default async function BlogHomePage() {
   const settings = await getSettings()
@@ -34,13 +35,13 @@ export default async function BlogHomePage() {
           <aside className="space-y-10 lg:sticky lg:top-8 lg:h-fit lg:pl-16 xl:pl-20">
             <Newsletter />
             {settings?.resume && <Resume resume={settings.resume} />}
-            <Live2D />  {/* Live2D 看板娘组件 */}
+            {/* 直接插入加载 Live2D 看板娘的 script */}
+            <Script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js" strategy="afterInteractive" />
           </aside>
         </div>
       </Container>
     </>
   )
 }
-
 
 export const revalidate = 60
